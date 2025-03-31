@@ -23,7 +23,7 @@ public class MainApp {
 
         Car car1 = new Car("Toyota", 70);
         Car car2 = new Car("BMW", 530);
-        Car car3 = new Car("Mercedes-Benz", 213);
+        Car car3 = new Car("Mercedes-Benz", 21);
         Car car4 = new Car("ВАЗ", 2101);
         Car car5 = new Car("Lexus", 4);
 
@@ -39,14 +39,11 @@ public class MainApp {
         userService.addCar(car4);
         userService.addCar(car5);
 
-
         userService.add(user1);
         userService.add(user2);
         userService.add(user3);
         userService.add(user4);
         userService.add(user5);
-
-
 
 
         List<User> users = userService.listUsers();
@@ -55,9 +52,10 @@ public class MainApp {
             System.out.println("First Name = " + user.getFirstName());
             System.out.println("Last Name = " + user.getLastName());
             System.out.println("Email = " + user.getEmail());
-            System.out.println(user.getCar().toString());
+            System.out.println(user.getCar());
         }
 
+        System.out.println("User которого мы ищем - " + userService.findUserByCarInfo("ВаАЗ", 2102).toString());
         context.close();
     }
 }

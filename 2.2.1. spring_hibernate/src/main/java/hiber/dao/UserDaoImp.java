@@ -17,6 +17,7 @@ public class UserDaoImp implements UserDao {
     @Autowired
     private SessionFactory sessionFactory;
 
+
     @Override
     public void add(User user) {
         sessionFactory.getCurrentSession().save(user);
@@ -29,7 +30,7 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public User findUserByCarInfo(String model, int series) {
-     
+
         try {
             Query<Car> query = sessionFactory.getCurrentSession().createQuery("select c from Car c where c.model like :model AND c.series = :series");
             query.setParameter("model", model);

@@ -55,7 +55,7 @@ public class MainApp {
             System.out.println(user.getCar());
         }
 
-        System.out.println("User которого мы ищем - " + userService.findUserByCarInfo("ВаАЗ", 2102).toString());
+        System.out.println("User которого мы ищем - " + userService.findUserByCarInfo("ВАЗ", 2101).toString());
         context.close();
     }
 }
